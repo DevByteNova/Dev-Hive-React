@@ -1,0 +1,418 @@
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 100px 20px 60px;
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+        circle,
+        rgba(1, 177, 225, 0.12),
+        transparent 70%
+    );
+
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+
+    max-width: 900px;
+}
+/* =========================
+   TAG
+========================= */
+
+.hero-tag {
+    margin: 0 0 20px;
+
+    color: #01b1e1;
+
+    font-size: 0.8rem;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.hero-title {
+    margin: 0 0 25px;
+
+    color: #ffffff;
+
+    font-size: clamp(2.8rem, 7vw, 5.5rem);
+
+    font-weight: 800;
+
+    line-height: 1.05;
+
+    letter-spacing: -2px;
+}
+
+.hero-title span {
+    display: block;
+
+    color: #01b1e1;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.hero-description {
+    max-width: 650px;
+
+    margin: 0 auto 35px;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    font-size: 1.05rem;
+
+    line-height: 1.7;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.hero-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+/* =========================
+   BUTTON BASE
+========================= */
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 180px;
+
+    padding: 14px 24px;
+
+    border: 1px solid #01b1e1;
+
+    border-radius: 8px;
+
+    background: #01b1e1;
+
+    color: #050505;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.btn:nth-child(1) {
+    background: var(--color-azul-claro);
+    border-color: var(--color-azul-claro);
+}
+
+.btn:nth-child(2) {
+    background: transparent;
+    color: #ffffff;
+    border-color: var(--color-naranja);
+}
+
+.btn:nth-child(2):hover {
+    background: var(--color-naranja);
+    border-color: var(--color-naranja);
+    color: #ffffff
+        color 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 10px 30px rgba(1, 177, 225, 0.3);
+
+    background: #ffffff;
+
+    border-color: #ffffff;
+}
+
+.btn:nth-child(1):hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(1, 177, 225, 0.3);
+}
+
+/* =========================
+   OUTLINE BUTTON
+========================= */
+
+.btn-outline {
+    background: transparent;
+
+    color: #ffffff;
+}
+
+.btn-outline:hover {
+    background: #01b1e1;
+
+    color: #050505;
+
+    border-color: #01b1e1;
+}
+
+/* =========================
+   HERO ANIMATION
+========================= */
+
+.hero-animate {
+    opacity: 0;
+
+    animation: heroFadeUp 0.8s ease forwards;
+}
+
+.hero-delay-1 {
+    animation-delay: 0.15s;
+}
+
+.hero-delay-2 {
+    animation-delay: 0.3s;
+}
+
+.hero-delay-3 {
+    animation-delay: 0.45s;
+}
+
+.hero-delay-4 {
+    animation-delay: 0.6s;
+}
+
+@keyframes heroFadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 110px 20px 70px;
+    }
+
+    .hero-title {
+        letter-spacing: -1px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+
+        max-width: 320px;
+    }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero-animate {
+        opacity: 1;
+
+        animation: none;
+    }
+
+    .btn {
+        transition: none;
+    }
+
+    .btn:hover {
+        transform: none;
+    }
+}
+.hero.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+
+    animation: heroReveal 0.9s ease forwards;
+    animation-delay: 0.15s;
+}
+
+@keyframes heroReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero.reveal {
+        opacity: 1;
+        transform: none;
+        animation: none;
+    }
+}
+/* =========================
+   HERO BUTTONS
+========================= */
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+    margin-top: 10px;
+}
+
+.hero-buttons .btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-width: 170px;
+
+    padding: 14px 24px;
+
+    border: 1px solid #01b1e1;
+
+    border-radius: 8px;
+
+    background: #01b1e1;
+
+    color: #050505;
+
+    font-size: 0.95rem;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+/* Botón principal */
+
+.hero-buttons .btn:first-child:hover {
+    transform: translateY(-4px);
+
+    background: #ffffff;
+
+    border-color: #ffffff;
+
+    color: #050505;
+
+    box-shadow:
+        0 10px 25px rgba(1, 177, 225, 0.2);
+}
+
+/* Botón secundario */
+
+.hero-buttons .btn.btn-outline {
+    background: transparent;
+
+    color: #ffffff;
+}
+
+.hero-buttons .btn.btn-outline:hover {
+    transform: translateY(-4px);
+
+    background: #01b1e1;
+
+    border-color: #01b1e1;
+
+    color: #050505;
+
+    box-shadow:
+        0 10px 25px rgba(1, 177, 225, 0.2);
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+
+    .hero-buttons {
+        width: 100%;
+
+        flex-direction: column;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+
+        max-width: 280px;
+    }
+
+}

@@ -1,0 +1,154 @@
+.project-card {
+    position: relative;
+
+    min-height: 250px;
+
+    padding: 32px;
+
+    box-sizing: border-box;
+
+    background: #080808;
+
+    border: 1px solid rgba(1, 177, 225, 0.15);
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background-color 0.3s ease;
+}
+
+.project-card:nth-child(1) {
+    border-top: 3px solid var(--color-azul-claro);
+}
+
+.project-card:nth-child(2) {
+    border-top: 3px solid var(--color-naranja);
+}
+
+.project-card:nth-child(3) {
+    border-top: 3px solid var(--color-azul-rey);
+}
+
+.project-card-content {
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+}
+
+/* Categoría */
+
+.project-category {
+    margin: 0 0 18px;
+
+    color: #01b1e1;
+
+    font-size: 0.75rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.project-card:nth-child(1) .project-category {
+    color: var(--color-azul-claro);
+}
+
+.project-card:nth-child(2) .project-category {
+    color: var(--color-naranja);
+}
+
+.project-card:nth-child(3) .project-category {
+    color: var(--color-azul-rey);
+}
+
+/* Título */
+
+.project-card h3 {
+    margin: 0 0 15px;
+
+    color: #ffffff;
+
+    font-size: 1.35rem;
+
+    line-height: 1.3;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* Descripción */
+
+.project-description {
+    margin: 0;
+
+    color: rgba(255, 255, 255, 0.7);
+
+    line-height: 1.7;
+}
+
+/* Flecha */
+
+.project-arrow {
+    margin-top: auto;
+
+    padding-top: 25px;
+
+    color: #01b1e1;
+
+    font-size: 1.5rem;
+
+    line-height: 1;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+/* Hover */
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    background: #0a0a0a;
+
+    border-color: rgba(1, 177, 225, 0.45);
+
+    box-shadow:
+        0 15px 35px rgba(1, 177, 225, 0.12);
+}
+
+.project-card:hover h3 {
+    color: #01b1e1;
+
+    transform: translateY(-2px);
+}
+
+.project-card:hover .project-arrow {
+    transform: translateX(8px);
+
+    color: #ffffff;
+}
+
+/* Mobile */
+
+@media (max-width: 550px) {
+
+    .project-card {
+        min-height: 220px;
+
+        padding: 28px;
+    }
+
+}
