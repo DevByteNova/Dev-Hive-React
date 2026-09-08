@@ -13,7 +13,7 @@ function Navbar() {
             <div className="navbar-container">
 
                 <a href="#home" className="logo">
-                    <img src="logo.png" className="logo" />
+                    <img src="/logo.png" alt="Dev-Hive" />
 
                     <span>Dev-Hive</span>
                 </a>

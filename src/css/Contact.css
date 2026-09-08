@@ -66,11 +66,9 @@
 
 .form-group input:focus,
 .form-group textarea:focus {
-    border-color: #01b1e1; 
+    border-color: #01b1e1;
     background: #0a0a0a;
-    box-shadow:
-        0 0 0 3px rgba(0, 51, 204, 0.1),
-        0 0 0 3px rgba(1, 177, 225, 0.08);
+    box-shadow: 0 0 0 3px rgba(1, 177, 225, 0.15);
 }
 .form-group textarea {
     min-height: 150px;
@@ -91,8 +89,6 @@
 }
 
 .form-message.error {
-
-    color: var(--color-naranja);
     color: #e13700;
 }
 

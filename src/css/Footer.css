@@ -29,7 +29,6 @@
 
     margin-bottom: 15px;
 
-    color: var(--color-violeta);
     color: #01b1e1;
 
     font-size: 1.5rem;
@@ -113,9 +112,7 @@
     border-top: 1px solid rgba(1, 177, 225, 0.1);
 
     text-align: center;
-}
 
-.footer-bottom {
     color: #777777;
 
     font-size: 0.9rem;

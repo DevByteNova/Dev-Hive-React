@@ -1,7 +1,5 @@
 import "../css/Hero.css";
 
-import "../css/Hero.css";
-
 function Hero() {
     return (
         <section className="hero reveal" id="home">
@@ -10,7 +8,7 @@ function Hero() {
                     SOFTWARE & WEB DEVELOPMENT
                 </p>
 
-                <h1>
+                <h1 className="hero-title">
                     Construimos el futuro
                     <span> digital.</span>
                 </h1>

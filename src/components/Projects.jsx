@@ -53,7 +53,6 @@ function Projects() {
                     {projects.map((project) => (
                         <ProjectCard
                             key={project.number}
-                            number={project.number}
                             title={project.title}
                             category={project.category}
                             description={project.description}
