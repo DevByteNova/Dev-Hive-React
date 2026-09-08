@@ -19,7 +19,7 @@ export default async function handler(req, res) {
         }
 
         await resend.emails.send({
-            from: "Dev-Hive <bytenovax@gmail.com>",
+            from: "Dev-Hive <onboarding@resend.dev>",
             to: [process.env.CONTACT_EMAIL],
             replyTo: email,
             subject: `Nuevo mensaje de ${name}`,
