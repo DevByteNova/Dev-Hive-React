@@ -98,6 +98,8 @@
     align-self: center;
 
     margin-top: 5px;
+
+    cursor: pointer;
 }
 
 /* Mobile */
