@@ -1,8 +1,18 @@
 import "../css/ProjectCard.css";
 
-function ProjectCard({ title, description, category }) {
+function ProjectCard({ title, description, category, logo }) {
     return (
         <article className="project-card">
+
+            <div className="project-thumbnail">
+                {logo ? (
+                    logo
+                ) : (
+                    <span className="project-thumbnail-glyph">
+                        {title.charAt(0)}
+                    </span>
+                )}
+            </div>
 
             <div className="project-card-content">
 

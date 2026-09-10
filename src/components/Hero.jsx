@@ -28,6 +28,27 @@ function Hero() {
                         Ver Proyectos
                     </a>
                 </div>
+
+                <div className="hero-stats">
+                    <div className="hero-stat">
+                        <span className="hero-stat-value">40+</span>
+                        <span className="hero-stat-label">Proyectos entregados</span>
+                    </div>
+
+                    <div className="hero-stat-divider" />
+
+                    <div className="hero-stat">
+                        <span className="hero-stat-value">98%</span>
+                        <span className="hero-stat-label">Clientes satisfechos</span>
+                    </div>
+
+                    <div className="hero-stat-divider" />
+
+                    <div className="hero-stat">
+                        <span className="hero-stat-value">24h</span>
+                        <span className="hero-stat-label">Tiempo de respuesta</span>
+                    </div>
+                </div>
             </div>
         </section>
     );

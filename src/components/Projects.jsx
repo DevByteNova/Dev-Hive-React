@@ -1,4 +1,6 @@
 import ProjectCard from "./ProjectCard";
+import DevHiveLogo from "./DevHiveLogo";
+import AxiomaLogo from "./AxiomaLogo";
 
 import "../css/Projects.css";
 
@@ -10,14 +12,16 @@ function Projects() {
             title: "Dev-Hive",
             category: "Desarrollo Web",
             description:
-                "Sitio web moderno para una empresa de desarrollo de software."
+                "Sitio web moderno para una empresa de desarrollo de software.",
+            logo: <DevHiveLogo />
         },
         {
             number: "02",
-            title: "Sistema de Información ERP",
+            title: "Axioma OLTP Sistema",
             category: "Full-Stack",
             description:
-                "Sistema de gestión para ventas e inventario."
+                "Sistema de gestión para ventas e inventario.",
+            logo: <AxiomaLogo />
         },
         {
             number: "03",
@@ -56,6 +60,7 @@ function Projects() {
                             title={project.title}
                             category={project.category}
                             description={project.description}
+                            logo={project.logo}
                         />
                     ))}
 

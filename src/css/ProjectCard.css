@@ -3,23 +3,23 @@
 
     min-height: 250px;
 
-    padding: 32px;
-
     box-sizing: border-box;
 
-    background: #080808;
+    background: rgba(255, 255, 255, 0.03);
 
-    border: 1px solid rgba(1, 177, 225, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 
-    border-radius: 12px;
+    border-radius: 16px;
 
     overflow: hidden;
 
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+
     transition:
-        transform 0.3s ease,
-        border-color 0.3s ease,
-        box-shadow 0.3s ease,
-        background-color 0.3s ease;
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.4s ease,
+        box-shadow 0.4s ease;
 }
 
 .project-card:nth-child(1) {
@@ -34,8 +34,122 @@
     border-top: 3px solid var(--color-azul-rey);
 }
 
-.project-card-content {
+/* =========================
+   THUMBNAIL
+========================= */
+
+.project-thumbnail {
+    position: relative;
+
+    height: 160px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.project-card:nth-child(1) .project-thumbnail {
+    background: linear-gradient(135deg, var(--color-azul-claro) 0%, #080808 130%);
+}
+
+.project-card:nth-child(2) .project-thumbnail {
+    background: linear-gradient(135deg, var(--color-naranja) 0%, #080808 130%);
+}
+
+.project-card:nth-child(3) .project-thumbnail {
+    background: linear-gradient(135deg, var(--color-azul-rey) 0%, #080808 130%);
+}
+
+.project-thumbnail::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+
+    background-size: 24px 24px;
+
+    opacity: 0.5;
+
+    transition: transform 0.6s ease;
+}
+
+.project-thumbnail-glyph {
+    position: relative;
+    z-index: 1;
+
+    color: rgba(255, 255, 255, 0.9);
+
+    font-size: 3.2rem;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    opacity: 0.85;
+}
+
+.project-thumbnail img {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
     height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.6s ease;
+}
+
+/* =========================
+   AXIOMA LOGO (custom thumbnail content)
+========================= */
+
+.axioma-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    z-index: 1;
+}
+
+.axioma-logo-mark {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+}
+
+.axioma-logo-text {
+    color: #f4f7fa;
+
+    font-size: 1.3rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+/* =========================
+   CARD CONTENT
+========================= */
+
+.project-card-content {
+    height: calc(100% - 160px);
+
+    padding: 32px;
+
+    box-sizing: border-box;
 
     display: flex;
 
@@ -116,17 +230,29 @@
         color 0.3s ease;
 }
 
-/* Hover */
+/* =========================
+   HOVER
+========================= */
 
 .project-card:hover {
     transform: translateY(-8px);
 
-    background: #0a0a0a;
-
-    border-color: rgba(1, 177, 225, 0.45);
+    border-color: rgba(1, 177, 225, 0.4);
 
     box-shadow:
-        0 15px 35px rgba(1, 177, 225, 0.12);
+        0 24px 50px -20px rgba(1, 177, 225, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.project-card:hover .project-thumbnail::before,
+.project-card:hover .project-thumbnail img {
+    transform: scale(1.08);
+}
+
+.project-card:hover .project-thumbnail-glyph {
+    transform: scale(1.05);
+
+    opacity: 1;
 }
 
 .project-card:hover h3 {
@@ -141,14 +267,172 @@
     color: #ffffff;
 }
 
-/* Mobile */
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 550px) {
 
-    .project-card {
-        min-height: 220px;
+    .project-thumbnail {
+        height: 130px;
+    }
+
+    .project-thumbnail-glyph {
+        font-size: 2.6rem;
+    }
+
+    .axioma-logo-mark {
+        width: 42px;
+        height: 42px;
+    }
+
+    .axioma-logo-text {
+        font-size: 1.05rem;
+    }
+
+    .project-card-content {
+        height: calc(100% - 130px);
 
         padding: 28px;
+    }
+
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .project-card {
+        transition: none;
+    }
+
+    .project-card:hover {
+        transform: none;
+    }
+
+    .project-thumbnail::before,
+    .project-thumbnail img,
+    .project-thumbnail-glyph {
+        transition: none;
+    }
+
+    .project-card:hover .project-thumbnail::before,
+    .project-card:hover .project-thumbnail img,
+    .project-card:hover .project-thumbnail-glyph {
+        transform: none;
+    }
+
+}
+/* =========================
+   DEV-HIVE LOGO (custom thumbnail content)
+========================= */
+
+.devhive-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    z-index: 1;
+}
+
+.devhive-logo-mark {
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+}
+
+.devhive-logo-text {
+    color: #f4f7fa;
+
+    font-size: 1.3rem;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.devhive-live-badge {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    z-index: 2;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 6px;
+
+    padding: 4px 10px;
+
+    border-radius: 100px;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 0.68rem;
+
+    font-weight: 600;
+
+    letter-spacing: 0.3px;
+}
+
+.devhive-live-dot {
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: #00e5c7;
+
+    box-shadow: 0 0 6px 1px rgba(0, 229, 199, 0.7);
+
+    animation: devhive-pulse 2s ease-in-out infinite;
+}
+
+@keyframes devhive-pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.4;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .devhive-logo-mark {
+        width: 42px;
+        height: 42px;
+    }
+
+    .devhive-logo-text {
+        font-size: 1.05rem;
+    }
+
+    .devhive-live-badge {
+        top: -60px;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .devhive-live-dot {
+        animation: none;
     }
 
 }

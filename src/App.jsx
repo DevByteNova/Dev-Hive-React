@@ -8,11 +8,13 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Particles from "./components/Particles";
 import ScrollReveal from "./components/ScrollReveal";
+import EasterEgg from "./components/EasterEgg";
 
 function App() {
     return (
         <>
             <Particles />
+            <EasterEgg />
 
             <Navbar />
             <Hero />
