@@ -1,8 +1,13 @@
 import ProjectCard from "./ProjectCard";
 import DevHiveLogo from "./DevHiveLogo";
-import AxiomaLogo from "./AxiomaLogo";
+import DecareLogo from "./DecareLogo";
 
 import "../css/Projects.css";
+
+// Dirección de la tienda de pijamas. Mientras no esté publicada se usa la
+// instalación local de XAMPP; al publicarla basta con definir VITE_TIENDA_URL.
+const TIENDA_PIJAMAS_URL =
+    import.meta.env.VITE_TIENDA_URL ?? "http://localhost/Axioma-commerce-stock-master/";
 
 function Projects() {
 
@@ -17,11 +22,12 @@ function Projects() {
         },
         {
             number: "02",
-            title: "Axioma OLTP Sistema",
+            title: "Pijamas Decare",
             category: "Full-Stack",
             description:
-                "Sistema de gestión para ventas e inventario.",
-            logo: <AxiomaLogo />
+                "Tienda en línea de pijamas con catálogo, carrito, inventario y facturación.",
+            logo: <DecareLogo />,
+            url: TIENDA_PIJAMAS_URL
         }
     ];
 
@@ -54,6 +60,7 @@ function Projects() {
                             category={project.category}
                             description={project.description}
                             logo={project.logo}
+                            url={project.url}
                         />
                     ))}
 

@@ -27,7 +27,7 @@
 }
 
 .project-card:nth-child(2) {
-    border-top: 3px solid var(--color-naranja);
+    border-top: 3px solid var(--color-coral);
 }
 
 .project-card:nth-child(3) {
@@ -56,7 +56,7 @@
 }
 
 .project-card:nth-child(2) .project-thumbnail {
-    background: linear-gradient(135deg, var(--color-naranja) 0%, #080808 130%);
+    background: linear-gradient(135deg, var(--color-coral) 0%, #080808 130%);
 }
 
 .project-card:nth-child(3) .project-thumbnail {
@@ -108,10 +108,10 @@
 }
 
 /* =========================
-   AXIOMA LOGO (custom thumbnail content)
+   DECARE LOGO (custom thumbnail content)
 ========================= */
 
-.axioma-logo {
+.decare-logo {
     display: flex;
 
     align-items: center;
@@ -121,7 +121,7 @@
     z-index: 1;
 }
 
-.axioma-logo-mark {
+.decare-logo-mark {
     width: 52px;
     height: 52px;
 
@@ -130,7 +130,7 @@
     filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
 }
 
-.axioma-logo-text {
+.decare-logo-text {
     color: #f4f7fa;
 
     font-size: 1.3rem;
@@ -179,7 +179,7 @@
 }
 
 .project-card:nth-child(2) .project-category {
-    color: var(--color-naranja);
+    color: var(--color-coral);
 }
 
 .project-card:nth-child(3) .project-category {
@@ -200,6 +200,37 @@
     transition:
         color 0.3s ease,
         transform 0.3s ease;
+}
+
+/* Enlace: cubre toda la tarjeta para que cualquier clic abra el proyecto */
+
+.project-card-link {
+    color: inherit;
+
+    text-decoration: none;
+}
+
+.project-card-link::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 2;
+}
+
+.project-card-link:focus-visible {
+    outline: none;
+}
+
+.project-card:has(.project-card-link:focus-visible) {
+    outline: 2px solid var(--color-azul-claro);
+
+    outline-offset: 4px;
+}
+
+.project-card:has(.project-card-link) {
+    cursor: pointer;
 }
 
 /* Descripción */
@@ -281,12 +312,12 @@
         font-size: 2.6rem;
     }
 
-    .axioma-logo-mark {
+    .decare-logo-mark {
         width: 42px;
         height: 42px;
     }
 
-    .axioma-logo-text {
+    .decare-logo-text {
         font-size: 1.05rem;
     }
 

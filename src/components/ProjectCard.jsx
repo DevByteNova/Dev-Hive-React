@@ -1,6 +1,6 @@
 import "../css/ProjectCard.css";
 
-function ProjectCard({ title, description, category, logo }) {
+function ProjectCard({ title, description, category, logo, url }) {
     return (
         <article className="project-card">
 
@@ -21,14 +21,25 @@ function ProjectCard({ title, description, category, logo }) {
                 </p>
 
                 <h3>
-                    {title}
+                    {url ? (
+                        <a
+                            className="project-card-link"
+                            href={url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            {title}
+                        </a>
+                    ) : (
+                        title
+                    )}
                 </h3>
 
                 <p className="project-description">
                     {description}
                 </p>
 
-                <span className="project-arrow">
+                <span className="project-arrow" aria-hidden="true">
                     →
                 </span>
 
