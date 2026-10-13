@@ -22,13 +22,6 @@ function Projects() {
             description:
                 "Sistema de gestión para ventas e inventario.",
             logo: <AxiomaLogo />
-        },
-        {
-            number: "03",
-            title: "Aplicación Digital",
-            category: "Software",
-            description:
-                "Solución digital diseñada para mejorar procesos."
         }
     ];
 
