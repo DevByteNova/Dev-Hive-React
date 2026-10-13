@@ -1,34 +1,9 @@
-import { useEffect, useRef } from "react";
 import { Target, Eye } from "lucide-react";
 import "../css/About.css";
 
 function About() {
-    const sectionRef = useRef(null);
-
-    useEffect(() => {
-        const cards = sectionRef.current.querySelectorAll(
-            ".mission-vision-card, .about-card"
-        );
-
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("in-view");
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            { threshold: 0.2 }
-        );
-
-        cards.forEach((card) => observer.observe(card));
-
-        return () => observer.disconnect();
-    }, []);
-
     return (
-        <section className="about" id="about" ref={sectionRef}>
+        <section className="about" id="about">
             <div className="container">
 
                 <p className="section-tag">
@@ -71,6 +46,36 @@ function About() {
                         </p>
                     </div>
 
+                </div>
+
+                <div className="founders-section">
+                    <p className="founders-label">Fundadores de DevHive</p>
+
+                    <div className="founders-grid">
+                        <article className="founder-card">
+                            <img
+                                className="founder-photo"
+                                src="/assets/img/Santiago.jpg"
+                                alt="Santiago Giraldo Niño"
+                            />
+                            <div className="founder-info">
+                                <h3>Santiago Giraldo Niño</h3>
+                                <span>Fundador de DevHive</span>
+                            </div>
+                        </article>
+
+                        <article className="founder-card">
+                            <img
+                                className="founder-photo"
+                                src="/assets/img/Felipe.jpg"
+                                alt="Felipe Socarras Garzon"
+                            />
+                            <div className="founder-info">
+                                <h3>Felipe Socarras Garzon</h3>
+                                <span>Fundador de DevHive</span>
+                            </div>
+                        </article>
+                    </div>
                 </div>
 
                 <div className="about-grid">

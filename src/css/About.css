@@ -134,9 +134,7 @@
 
 .mission-vision-card:hover {
     transform: translateY(-6px);
-
     border-color: rgba(1, 177, 225, 0.35);
-
     box-shadow: 0 20px 50px -20px rgba(1, 177, 225, 0.35);
 }
 
@@ -172,6 +170,103 @@
 }
 
 /* =========================
+   FOUNDERS GRID
+========================= */
+
+.founders-section {
+    margin-bottom: 60px;
+}
+
+.founders-label {
+    margin: 0 0 28px;
+
+    color: #01b1e1;
+
+    font-size: 0.9rem;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+.founders-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 24px;
+}
+
+.founder-card {
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+
+    background: rgba(255, 255, 255, 0.03);
+
+    max-width: 360px;
+    margin: 0 auto;
+    width: 100%;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.founder-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(1, 177, 225, 0.35);
+    box-shadow: 0 30px 60px -28px rgba(1, 177, 225, 0.5);
+}
+
+.founder-photo {
+    display: block;
+
+    width: 100%;
+    height: 320px;
+
+    object-fit: cover;
+
+    object-position: center top;
+
+    background: rgba(255, 255, 255, 0.05);
+    filter: saturate(1.08) contrast(1.02);
+}
+
+.founder-info {
+    padding: 18px 18px 22px;
+
+    text-align: center;
+}
+
+.founder-info h3 {
+    margin: 0 0 8px;
+
+    color: #f4f7fa;
+
+    font-size: 1.06rem;
+
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.founder-info span {
+    color: #01b1e1;
+
+    font-size: 0.72rem;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+/* =========================
    ABOUT GRID (INNOVACIÓN / CALIDAD / COMPROMISO)
 ========================= */
 
@@ -201,9 +296,7 @@
 
 .about-card:hover {
     transform: translateY(-6px);
-
     border-color: rgba(1, 177, 225, 0.35);
-
     box-shadow: 0 20px 50px -20px rgba(1, 177, 225, 0.35);
 }
 
@@ -240,41 +333,16 @@
 }
 
 /* =========================
-   SCROLL REVEAL (CARDS)
-========================= */
-
-.mission-vision-card,
-.about-card {
-    opacity: 0;
-    transform: translateY(30px);
-
-    transition:
-        opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-        transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-        border-color 0.35s ease,
-        box-shadow 0.35s ease;
-}
-
-.mission-vision-card.in-view,
-.about-card.in-view {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.mission-vision-grid .mission-vision-card:nth-child(1) { transition-delay: 0s; }
-.mission-vision-grid .mission-vision-card:nth-child(2) { transition-delay: 0.12s; }
-
-.about-grid .about-card:nth-child(1) { transition-delay: 0s; }
-.about-grid .about-card:nth-child(2) { transition-delay: 0.12s; }
-.about-grid .about-card:nth-child(3) { transition-delay: 0.24s; }
-
-/* =========================
    MOBILE
 ========================= */
 
 @media (max-width: 768px) {
 
     .mission-vision-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .founders-grid {
         grid-template-columns: 1fr;
     }
 
@@ -296,14 +364,14 @@
 @media (prefers-reduced-motion: reduce) {
 
     .mission-vision-card,
-    .about-card {
-        opacity: 1;
-        transform: none;
+    .about-card,
+    .founder-card {
         transition: none;
     }
 
     .mission-vision-card:hover,
-    .about-card:hover {
+    .about-card:hover,
+    .founder-card:hover {
         transform: none;
     }
 

@@ -28,6 +28,11 @@
     width: fit-content;
 
     margin-bottom: 15px;
+    padding: 0;
+
+    border: none;
+    background: transparent;
+    cursor: pointer;
 
     color: #01b1e1;
 
@@ -86,17 +91,26 @@
     font-size: 1rem;
 }
 
-.footer-links a {
+.footer-links a,
+.footer-link {
     color: #aaaaaa;
 
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+
     text-decoration: none;
+    font: inherit;
+    text-align: left;
 
     transition:
         color 0.3s ease,
         transform 0.3s ease;
 }
 
-.footer-links a:hover {
+.footer-links a:hover,
+.footer-link:hover {
     color: #01b1e1;
 
     transform: translateX(4px);

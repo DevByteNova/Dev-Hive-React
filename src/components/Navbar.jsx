@@ -1,24 +1,39 @@
 import { useState } from "react";
 import "../css/navbar.css";
 
-function Navbar() {
+function Navbar({ activeSection, onSelectSection }) {
     const [menuOpen, setMenuOpen] = useState(false);
 
-    const handleNavClick = () => {
+    const navItems = [
+        { id: "home", label: "Inicio" },
+        { id: "services", label: "Servicios" },
+        { id: "technologies", label: "Tecnologías" },
+        { id: "about", label: "Nosotros" },
+        { id: "projects", label: "Proyectos" },
+        { id: "contact", label: "Contacto" }
+    ];
+
+    const handleNavClick = (section) => {
+        onSelectSection(section);
         setMenuOpen(false);
-    }
+    };
 
     return (
         <header className="navbar">
             <div className="navbar-container">
 
-                <a href="#home" className="logo">
+                <button
+                    type="button"
+                    className="logo"
+                    onClick={() => handleNavClick("home")}
+                    aria-label="Ir a Inicio"
+                >
                     <img src="/logo.png" alt="Dev-Hive" />
-
                     <span>Dev-Hive</span>
-                </a>
+                </button>
 
                 <button
+                    type="button"
                     className="menu-toggle"
                     onClick={() => setMenuOpen(!menuOpen)}
                     aria-label="Abrir menú"
@@ -28,12 +43,17 @@ function Navbar() {
 
                 <nav>
                     <ul className={menuOpen ? "active" : ""}>
-                        <li><a href="#home" onClick={handleNavClick}>Inicio</a></li>
-                        <li><a href="#services" onClick={handleNavClick}>Servicios</a></li>
-                        <li><a href="#technologies"onClick={handleNavClick}>Tecnologías</a></li>
-                        <li><a href="#about"onClick={handleNavClick}>Nosotros</a></li>
-                        <li><a href="#projects"onClick={handleNavClick}>Proyectos</a></li>
-                        <li><a href="#contact"onClick={handleNavClick}>Contacto</a></li>
+                        {navItems.map((item) => (
+                            <li key={item.id}>
+                                <button
+                                    type="button"
+                                    className={activeSection === item.id ? "nav-link active" : "nav-link"}
+                                    onClick={() => handleNavClick(item.id)}
+                                >
+                                    {item.label}
+                                </button>
+                            </li>
+                        ))}
                     </ul>
                 </nav>
 

@@ -1,8 +1,16 @@
 import "../css/Footer.css";
 
-function Footer() {
-
+function Footer({ onSelectSection }) {
     const currentYear = new Date().getFullYear();
+
+    const navItems = [
+        { id: "home", label: "Inicio" },
+        { id: "services", label: "Servicios" },
+        { id: "technologies", label: "Tecnologías" },
+        { id: "about", label: "Nosotros" },
+        { id: "projects", label: "Proyectos" },
+        { id: "contact", label: "Contacto" }
+    ];
 
     return (
         <footer className="footer">
@@ -12,12 +20,13 @@ function Footer() {
 
                     <div className="footer-brand">
 
-                        <a
-                            href="#home"
+                        <button
+                            type="button"
                             className="footer-logo"
+                            onClick={() => onSelectSection("home")}
                         >
                             <img src="/logo.png" alt="Dev-Hive" />
-                        </a>
+                        </button>
 
                         <p>
                             Construimos soluciones digitales
@@ -32,29 +41,16 @@ function Footer() {
                             Navegación
                         </h3>
 
-                        <a href="#home">
-                            Inicio
-                        </a>
-
-                        <a href="#services">
-                            Servicios
-                        </a>
-
-                        <a href="#technologies">
-                            Tecnologías
-                        </a>
-
-                        <a href="#about">
-                            Nosotros
-                        </a>
-
-                        <a href="#projects">
-                            Proyectos
-                        </a>
-
-                        <a href="#contact">
-                            Contacto
-                        </a>
+                        {navItems.map((item) => (
+                            <button
+                                key={item.id}
+                                type="button"
+                                className="footer-link"
+                                onClick={() => onSelectSection(item.id)}
+                            >
+                                {item.label}
+                            </button>
+                        ))}
 
                     </div>
 

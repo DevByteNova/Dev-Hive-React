@@ -1,6 +1,6 @@
 import "../css/Hero.css";
 
-function Hero() {
+function Hero({ onSelectSection }) {
     return (
         <section className="hero reveal" id="home">
             <div className="hero-content">
@@ -20,13 +20,21 @@ function Hero() {
                 </p>
 
                 <div className="hero-buttons">
-                    <a href="#services" className="btn">
+                    <button
+                        type="button"
+                        className="btn"
+                        onClick={() => onSelectSection("services")}
+                    >
                         Nuestros Servicios
-                    </a>
+                    </button>
 
-                    <a href="#projects" className="btn btn-outline">
+                    <button
+                        type="button"
+                        className="btn btn-outline"
+                        onClick={() => onSelectSection("projects")}
+                    >
                         Ver Proyectos
-                    </a>
+                    </button>
                 </div>
 
                 <div className="hero-stats">

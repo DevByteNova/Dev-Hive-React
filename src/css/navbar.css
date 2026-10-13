@@ -52,6 +52,12 @@
 
     gap: 12px;
 
+    padding: 0;
+
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
     color: #ffffff;
     text-decoration: none;
 
@@ -84,14 +90,27 @@
 
     line-height: 1;
     white-space: nowrap;
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+
+    background: linear-gradient(110deg, #ffffff 0%, #ffffff 42%, #01b1e1 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
     transition: 
-        color 0.3s ease,
-        text-shadow 0.3s ease;
+        filter 0.3s ease,
+        letter-spacing 0.3s ease;
 }
 
 .logo:hover img {
     transform: scale(1.04);
+}
+
+.logo:hover span {
+    filter: drop-shadow(0 0 8px rgba(1, 177, 225, 0.45));
+    letter-spacing: -0.4px;
 }
 
 .logo:hover {
@@ -120,17 +139,22 @@ nav ul {
     list-style: none;
 }
 
-nav a {
+nav a,
+.nav-link {
     position: relative;
 
     display: inline-block;
 
     padding: 5px 0;
 
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
     color: var(--navbar-white);
 
     text-decoration: none;
-
+    font: inherit;
     font-size: 0.95rem;
     font-weight: 500;
 
@@ -141,7 +165,8 @@ nav a {
 
 /* Animated underline */
 
-nav a::after {
+nav a::after,
+.nav-link::after {
     content: "";
 
     position: absolute;
@@ -160,13 +185,17 @@ nav a::after {
     transition: transform 0.3s ease;
 }
 
-nav a:hover {
+nav a:hover,
+.nav-link:hover,
+.nav-link.active {
     color: var(--navbar-cyan);
 
     transform: translateY(-1px);
 }
 
-nav a:hover::after {
+nav a:hover::after,
+.nav-link:hover::after,
+.nav-link.active::after {
     transform: scaleX(1);
 }
 
@@ -262,7 +291,8 @@ nav a:hover::after {
         width: 100%;
     }
 
-    nav a {
+    nav a,
+    .nav-link {
         display: block;
 
         width: 100%;
@@ -271,6 +301,7 @@ nav a:hover::after {
 
         padding: 16px 20px;
 
+        border: none;
         border-bottom: 1px solid rgba(1, 177, 225, 0.1);
 
         transition:
@@ -279,11 +310,13 @@ nav a:hover::after {
             padding-left 0.3s ease;
     }
 
-    nav a::after {
+    nav a::after,
+    .nav-link::after {
         display: none;
     }
 
-    nav a:hover {
+    nav a:hover,
+    .nav-link:hover {
         background: rgba(1, 177, 225, 0.06);
 
         padding-left: 26px;
@@ -306,6 +339,10 @@ nav a:hover::after {
     }
 
     .logo {
+        font-size: 1.3rem;
+    }
+
+    .logo span {
         font-size: 1.3rem;
     }
 

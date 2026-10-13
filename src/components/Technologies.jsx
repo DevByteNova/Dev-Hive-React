@@ -61,7 +61,7 @@ function Technologies() {
 
     return (
         <section
-            className="technologies reveal"
+            className="technologies"
             id="technologies"
         >
             <div className="container">
