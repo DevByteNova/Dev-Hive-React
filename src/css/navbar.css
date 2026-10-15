@@ -1,7 +1,8 @@
 :root {
-    --navbar-bg: rgba(5, 5, 5, 0.92);
+    --navbar-bg: rgba(13, 32, 41, 0.94);
     --navbar-white: #ffffff;
     --navbar-cyan: #01b1e1;
+    --navbar-gold: #c89212;
 }
 
 /* =========================
@@ -19,7 +20,7 @@
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
 
-    border-bottom: 1px solid rgba(1, 177, 225, 0.12);
+    border-bottom: 1px solid rgba(200, 146, 18, 0.24);
 
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
 
@@ -50,7 +51,7 @@
     display: flex;
     align-items: center;
 
-    gap: 12px;
+    gap: 10px;
 
     padding: 0;
 
@@ -58,69 +59,55 @@
     background: transparent;
     cursor: pointer;
 
-    color: #ffffff;
+    color: var(--navbar-gold);
     text-decoration: none;
 
     font-family: var(--heading);
-    font-size: 1.35rem;
+    font-size: 1.05rem;
     font-weight: 700;
-    letter-spacing: -0.4px;
+    letter-spacing: 0.2em;
 
     transition: transform 0.3s ease;
-    text-decoration: none;
 }
 
-.logo img {
+.logo-mark {
     display: block;
-
-    width: 50px;
-    height: 50px;
-
-    object-fit: contain;
-    width: 86px;
-    height: auto;
+    width: 52px;
+    height: 48px;
+    flex: 0 0 auto;
 
     transition:
         transform 0.3s ease,
         filter 0.3s ease;
 }
 
-.logo span{
-    color: #ffffff;
-
+.logo span {
+    color: currentColor;
     line-height: 1;
     white-space: nowrap;
-    font-size: 1.45rem;
-    font-weight: 800;
-    letter-spacing: -0.7px;
-
-    background: linear-gradient(110deg, #ffffff 0%, #ffffff 42%, #01b1e1 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-
-    transition: 
-        filter 0.3s ease,
-        letter-spacing 0.3s ease;
+    font-size: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    transition: filter 0.3s ease;
 }
 
-.logo:hover img {
+.logo:hover .logo-mark {
     transform: scale(1.04);
+    filter: drop-shadow(0 0 6px rgba(200, 146, 18, 0.5));
 }
 
 .logo:hover span {
-    filter: drop-shadow(0 0 8px rgba(1, 177, 225, 0.45));
-    letter-spacing: -0.4px;
+    filter: drop-shadow(0 0 8px rgba(200, 146, 18, 0.55));
 }
 
 .logo:hover {
-    color: var(--navbar-white);
-
-    text-shadow:
-        0 0 8px rgba(1, 177, 225, 0.6),
-        0 0 18px rgba(1, 177, 225, 0.25);
-
+    color: #e3b53f;
     transform: translateY(-1px);
+}
+
+.logo:focus-visible {
+    outline: 2px solid var(--navbar-gold);
+    outline-offset: 5px;
 }
 
 /* =========================
@@ -339,11 +326,14 @@ nav a:hover::after,
     }
 
     .logo {
-        font-size: 1.3rem;
+        gap: 8px;
+        font-size: 0.95rem;
+        letter-spacing: 0.16em;
     }
 
-    .logo span {
-        font-size: 1.3rem;
+    .logo-mark {
+        width: 44px;
+        height: 42px;
     }
 
     .menu-toggle {

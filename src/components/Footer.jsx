@@ -25,7 +25,7 @@ function Footer({ onSelectSection }) {
                             className="footer-logo"
                             onClick={() => onSelectSection("home")}
                         >
-                            <img src="/logo.png" alt="Dev-Hive" />
+                            <img src="/public/assets/img/logo.png" alt="Dev-Hive" />
                         </button>
 
                         <p>

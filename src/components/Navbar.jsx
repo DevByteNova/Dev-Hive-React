@@ -28,8 +28,28 @@ function Navbar({ activeSection, onSelectSection }) {
                     onClick={() => handleNavClick("home")}
                     aria-label="Ir a Inicio"
                 >
-                    <img src="/logo.png" alt="Dev-Hive" />
-                    <span>Dev-Hive</span>
+                    <svg
+                        className="logo-mark"
+                        viewBox="0 0 280 190"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-hidden="true"
+                    >
+                        <g
+                            fill="none"
+                            stroke="currentColor"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2.5"
+                        >
+                            <path d="M140 5 102 52 140 181 178 52 140 5Z" />
+                            <path d="M140 5v158M102 52l38 32 38-32" />
+                            <path d="m20 68 59 8 51 105-103-55L20 68Z" />
+                            <path d="m20 68 57 58 2-50m-50 50 101 55" />
+                            <path d="m260 68-59 8-51 105 103-55 7-58Z" />
+                            <path d="m260 68-57 58-2-50m50 50-101 55" />
+                        </g>
+                    </svg>
+                    <span>DEV HIVE</span>
                 </button>
 
                 <button
