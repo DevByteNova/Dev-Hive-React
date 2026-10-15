@@ -14,6 +14,7 @@
     /* Corporate Colors Palette */
     --color-azul-claro: #01B1E1;
     --color-naranja: #E15700;
+    --color-coral: #F0787A;
     --color-negro: #000000;
     --color-azul-rey: #0033CC;
     --color-violeta: #78019F;
@@ -309,4 +310,8 @@ section h2 {
 .footer {
     position: relative;
     z-index: 1;
+}
+/* Las secciones quedan visibles bajo la barra fija al navegar desde el menú */
+main > section {
+    scroll-margin-top: 80px;
 }
