@@ -20,9 +20,9 @@ function About() {
                     necesidades de cada proyecto.
                 </p>
 
+                <h3 className="about-subheading">MISIÓN y VISIÓN</h3>
                 <div className="mission-vision-grid">
-
-                    <div className="mission-vision-card">
+                    <article className="mission-vision-card">
                         <Target className="mission-vision-icon" />
                         <h3>MISIÓN</h3>
                         <p>
@@ -32,9 +32,9 @@ function About() {
                             y clientes clave, garantizando una atención
                             de alta calidad.
                         </p>
-                    </div>
+                    </article>
 
-                    <div className="mission-vision-card">
+                    <article className="mission-vision-card">
                         <Eye className="mission-vision-icon" />
                         <h3>VISIÓN</h3>
                         <p>
@@ -44,7 +44,41 @@ function About() {
                             innovadoras y duraderas, más allá de las modas
                             pasajeras.
                         </p>
-                    </div>
+                    </article>
+                </div>
+
+                <h3 className="about-subheading">OBJETIVOS</h3>
+                <div className="objectives-grid">
+
+                    <article className="objective-card">
+                        <h3>OBJETIVO GENERAL</h3>
+                        <p>
+                            Consolidar el proyecto en el mercado mediante
+                            soluciones innovadoras que aseguren un
+                            crecimiento sostenible.
+                        </p>
+                    </article>
+
+                    <article className="objective-card">
+                        <h3>OBJETIVOS ESPECÍFICOS</h3>
+                        <ul className="objectives-list">
+                            <li>
+                                <strong>Posicionamiento:</strong> Incrementar la visibilidad digital en el primer año.
+                            </li>
+                            <li>
+                                <strong>Calidad:</strong> Superar el 90% de satisfacción mediante servicio personalizado.
+                            </li>
+                            <li>
+                                <strong>Financiero:</strong> Alcanzar el punto de equilibrio en los primeros meses.
+                            </li>
+                            <li>
+                                <strong>Innovación:</strong> Desarrollar nuevas funciones o productos adaptados a las tendencias actuales del mercado.
+                            </li>
+                            <li>
+                                <strong>Expansión:</strong> Crear alianzas estratégicas para ingresar a nuevos segmentos de clientes durante el año.
+                            </li>
+                        </ul>
+                    </article>
 
                 </div>
 
@@ -78,38 +112,6 @@ function About() {
                     </div>
                 </div>
 
-                <div className="about-grid">
-
-                    <article className="about-card">
-                        <span className="about-number">01</span>
-                        <h3>Innovación</h3>
-                        <p>
-                            Buscamos nuevas formas de utilizar
-                            la tecnología para crear mejores
-                            experiencias digitales.
-                        </p>
-                    </article>
-
-                    <article className="about-card">
-                        <span className="about-number">02</span>
-                        <h3>Calidad</h3>
-                        <p>
-                            Nos enfocamos en escribir código
-                            limpio, mantenible y eficiente.
-                        </p>
-                    </article>
-
-                    <article className="about-card">
-                        <span className="about-number">03</span>
-                        <h3>Compromiso</h3>
-                        <p>
-                            Trabajamos para convertir las ideas
-                            de nuestros clientes en soluciones
-                            reales.
-                        </p>
-                    </article>
-
-                </div>
             </div>
         </section>
     );

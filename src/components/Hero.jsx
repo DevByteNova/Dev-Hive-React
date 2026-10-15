@@ -9,8 +9,8 @@ function Hero({ onSelectSection }) {
                 </p>
 
                 <h1 className="hero-title">
-                    Construimos el futuro
-                    <span> digital.</span>
+                    Construyendo los sueños
+                    <span> en otros mundos digitales</span>
                 </h1>
 
                 <p className="hero-description">

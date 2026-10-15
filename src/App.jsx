@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import Services from "./components/Services";
 import Technologies from "./components/Technologies";
 import About from "./components/About";
+import CorporateValues from "./components/CorporateValues";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -32,7 +33,12 @@ function App() {
                 {activeSection === "home" && <Hero onSelectSection={handleSectionChange} />}
                 {activeSection === "services" && <Services />}
                 {activeSection === "technologies" && <Technologies />}
-                {activeSection === "about" && <About />}
+                {activeSection === "about" && (
+                    <>
+                        <About />
+                        <CorporateValues />
+                    </>
+                )}
                 {activeSection === "projects" && <Projects />}
                 {activeSection === "contact" && <Contact />}
             </main>
