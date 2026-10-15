@@ -16,12 +16,11 @@ const SECCIONES = ["home", "services", "technologies", "about", "projects", "con
 function App() {
     const [activeSection, setActiveSection] = useState("home");
 
-    // Desplaza suavemente hasta la sección elegida en el menú o en los botones.
+    // Desplaza hasta la sección elegida en el menú o en los botones.
     const handleSectionChange = (section) => {
         const destino = document.getElementById(section);
         if (!destino) return;
-        const reducirMovimiento = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        destino.scrollIntoView({ behavior: reducirMovimiento ? "auto" : "smooth", block: "start" });
+        destino.scrollIntoView({ behavior: "instant", block: "start" });
         setActiveSection(section);
     };
 
@@ -51,17 +50,13 @@ function App() {
             />
 
             <main>
-                {activeSection === "home" && <Hero onSelectSection={handleSectionChange} />}
-                {activeSection === "services" && <Services />}
-                {activeSection === "technologies" && <Technologies />}
-                {activeSection === "about" && (
-                    <>
-                        <About />
-                        <CorporateValues />
-                    </>
-                )}
-                {activeSection === "projects" && <Projects />}
-                {activeSection === "contact" && <Contact />}
+                <Hero onSelectSection={handleSectionChange} />
+                <Services />
+                <Technologies />
+                <About />
+                <CorporateValues />
+                <Projects />
+                <Contact />
             </main>
 
             <Footer onSelectSection={handleSectionChange} />
