@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pijamas Decare | Transforma tus noches con estilo y comodidad</title>
+<meta name="description" content="Pijamas Decare: pijamas para mujer, hombre, niños y fechas especiales. Ventas al por mayor y al detal en Bogotá con envíos nacionales.">
+<link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--coral:#f0787a;--coral-d:#c9505a;--tinte:#fde8e6;--tinte2:#fff6f5;--tinta:#2b2230;--suave:#6d6270;--borde:#f1dcda;--r:18px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--tinta);background:var(--tinte2);line-height:1.6}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.15}
+a{color:inherit}
+img{max-width:100%;display:block}
+.contenedor{max-width:1160px;margin:0 auto;padding:0 20px}
+section{padding:72px 0;scroll-margin-top:70px}
+.eyebrow{display:inline-block;color:var(--coral-d);font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.titulo{font-size:clamp(1.8rem,3.4vw,2.6rem);margin-bottom:14px}
+.sub{color:var(--suave);max-width:640px}
+.centro{text-align:center}.centro .sub{margin:0 auto}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:1.5px solid var(--coral);transition:.2s;cursor:pointer;font-size:.95rem}
+.btn-lleno{background:var(--coral);color:#fff}.btn-lleno:hover{background:var(--coral-d);border-color:var(--coral-d)}
+.btn-borde{background:#fff;color:var(--coral-d)}.btn-borde:hover{background:var(--coral);color:#fff}
+/* encabezado */
+header{position:sticky;top:0;z-index:20;background:rgba(43,34,48,.97);color:#fff;border-bottom:3px solid var(--coral)}
+.barra{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.marca{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:Fraunces,serif;font-weight:700;font-size:1.25rem}
+.marca svg{width:34px;height:34px}
+nav ul{display:flex;gap:4px;list-style:none}
+nav a{text-decoration:none;color:#e9dfe6;font-weight:500;font-size:.92rem;padding:8px 12px;border-radius:8px}
+nav a:hover{background:rgba(240,120,122,.18);color:#fff}
+.menu-btn{display:none;background:none;border:0;color:#fff;font-size:1.6rem;cursor:pointer}
+/* portada */
+.portada{padding:64px 0 56px;background:linear-gradient(135deg,var(--tinte),#fff 70%)}
+.portada-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:40px;align-items:center}
+.portada h1{font-size:clamp(2.2rem,5vw,3.6rem);margin:6px 0 18px}
+.portada h1 em{font-style:normal;color:var(--coral)}
+.portada p{color:var(--suave);font-size:1.08rem;max-width:520px;margin-bottom:26px}
+.acciones{display:flex;flex-wrap:wrap;gap:12px}
+.fotos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fotos img{border-radius:var(--r);aspect-ratio:6/7;object-fit:cover;box-shadow:0 20px 40px -24px rgba(201,80,90,.6)}
+.fotos img:nth-child(2){transform:translateY(26px)}
+.cifras{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:48px}
+.cifra{background:#fff;border:1px solid var(--borde);border-radius:var(--r);padding:16px 18px}
+.cifra strong{display:block;font-family:Fraunces,serif;font-size:1.6rem;color:var(--coral-d)}
+.cifra span{color:var(--suave);font-size:.88rem}
+/* nosotros */
+.nosotros-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.nosotros p+p{margin-top:14px}
+.tarjetas{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:36px}
+.tarjeta{background:#fff;border:1px solid var(--borde);border-radius:var(--r);padding:26px}
+.tarjeta h3{font-size:1.25rem;margin-bottom:8px;color:var(--coral-d)}
+.tarjeta ul{padding-left:18px;color:var(--suave)}.tarjeta li+li{margin-top:6px}
+.icono{width:44px;height:44px;border-radius:12px;background:var(--tinte);display:grid;place-items:center;margin-bottom:14px;font-size:1.3rem}
+.valores{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:20px}
+.valor{background:var(--tinte2);border:1px solid var(--borde);border-radius:14px;padding:16px;text-align:center}
+.valor strong{display:block;margin:6px 0 4px}.valor span{font-size:.85rem;color:var(--suave)}
+/* servicios */
+.servicios{background:#fff}
+.lineas{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px}
+.linea{border-radius:var(--r);overflow:hidden;border:1px solid var(--borde);background:var(--tinte2);text-decoration:none;transition:.2s}
+.linea:hover{transform:translateY(-4px);box-shadow:0 18px 36px -22px rgba(201,80,90,.5)}
+.linea img{aspect-ratio:1/1;object-fit:cover}
+.linea div{padding:14px 16px}.linea strong{display:block}.linea span{color:var(--suave);font-size:.87rem}
+.extras{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:22px}
+.extra{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--borde);border-radius:14px;padding:16px}
+.extra strong{display:block}.extra span{color:var(--suave);font-size:.88rem}
+/* catálogo */
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:26px 0 22px}
+.chip{border:1px solid var(--borde);background:#fff;border-radius:999px;padding:8px 16px;font-weight:600;font-size:.9rem;cursor:pointer;color:var(--tinta)}
+.chip[aria-pressed=true]{background:var(--coral);border-color:var(--coral);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:18px}
+.producto{background:#fff;border:1px solid var(--borde);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.producto img{aspect-ratio:6/7;object-fit:cover}
+.producto div{padding:14px 16px 18px;display:flex;flex-direction:column;gap:4px;flex:1}
+.producto .cat{color:var(--coral-d);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.producto h3{font-size:1.02rem;flex:1}
+.producto .fila{display:flex;justify-content:space-between;align-items:center;margin:6px 0 10px}
+.producto .precio{font-weight:700;font-size:1.15rem;color:var(--coral-d)}
+.producto .talla{font-size:.78rem;border:1px solid var(--borde);border-radius:8px;padding:2px 8px;color:var(--suave)}
+.producto .btn{justify-content:center;padding:9px 16px;font-size:.88rem}
+/* cómo comprar */
+.pasos{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:34px;counter-reset:paso}
+.paso{background:#fff;border:1px solid var(--borde);border-radius:var(--r);padding:22px;position:relative}
+.paso::before{counter-increment:paso;content:counter(paso);display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--coral);color:#fff;font-weight:700;margin-bottom:12px}
+.paso strong{display:block;margin-bottom:4px}.paso span{color:var(--suave);font-size:.9rem}
+.sistema{margin-top:30px;background:var(--tinta);color:#f3e9ee;border-radius:var(--r);padding:28px;display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center}
+.sistema h3{color:#fff;font-size:1.35rem;margin-bottom:8px}
+.sistema ul{padding-left:18px;color:#d9cdd4;font-size:.92rem}
+/* contacto */
+.contacto-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:30px}
+.dato{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--borde);border-radius:14px;padding:16px 18px;text-decoration:none}
+.dato+.dato{margin-top:12px}
+.dato strong{display:block}.dato span{color:var(--suave);font-size:.9rem}
+.horario{background:#fff;border:1px solid var(--borde);border-radius:14px;padding:22px}
+.horario h3{font-size:1.15rem;margin-bottom:10px}
+.horario p{color:var(--suave);font-size:.95rem}
+footer{background:var(--tinta);color:#d9cdd4;padding:30px 0;font-size:.9rem}
+.pie{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+footer a{color:#ffb3b4}
+@media (max-width:900px){
+ .portada-grid,.nosotros-grid,.contacto-grid,.sistema{grid-template-columns:1fr}
+ .cifras,.lineas,.pasos{grid-template-columns:repeat(2,1fr)}
+ .valores{grid-template-columns:repeat(2,1fr)}
+ .extras,.tarjetas{grid-template-columns:1fr}
+ nav ul{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:var(--tinta);padding:10px 20px 18px}
+ nav ul.abierto{display:flex}
+ .menu-btn{display:block}
+}
+@media (max-width:520px){.grid{grid-template-columns:repeat(2,1fr);gap:10px}.producto div{padding:10px}.cifras{grid-template-columns:1fr 1fr}section{padding:56px 0}}
+</style>
+</head>
+<body>
+<header>
+ <div class="contenedor barra">
+  <a href="#inicio" class="marca" aria-label="Pijamas Decare, inicio">
+   <svg viewBox="0 0 60 60" aria-hidden="true"><circle cx="30" cy="30" r="30" fill="#f0787a"/><g fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M30 46V24"/><path d="M30 34c-7 0-12-5-12-12 7 0 12 5 12 12z"/><path d="M30 30c7 0 12-5 12-12-7 0-12 5-12 12z"/><path d="M30 24c-3-3-3-8 0-11 3 3 3 8 0 11z"/></g></svg>
+   Pijamas Decare
+  </a>
+  <nav aria-label="Principal">
+   <button class="menu-btn" aria-label="Abrir menú" aria-expanded="false">☰</button>
+   <ul>
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#nosotros">Quiénes somos</a></li>
+    <li><a href="#servicios">Qué ofrecemos</a></li>
+    <li><a href="#catalogo">Catálogo</a></li>
+    <li><a href="#comprar">Cómo comprar</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+   </ul>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="portada" id="inicio">
+ <div class="contenedor">
+  <div class="portada-grid">
+   <div>
+    <span class="eyebrow">Pijamas y ropa exterior · Bogotá</span>
+    <h1>Transforma tus noches con <em>estilo y comodidad</em></h1>
+    <p>Pijamas de diseño exclusivo en satín, algodón y franela para mujer, hombre y niños, además de modelos temáticos para parejas y fechas especiales. Vendemos al por mayor y al detal, con envíos a todo Colombia.</p>
+    <div class="acciones">
+     <a href="#catalogo" class="btn btn-lleno">Ver catálogo</a>
+     <a href="https://wa.link/ea9ey2" target="_blank" rel="noopener" class="btn btn-borde">Pedir por WhatsApp</a>
+    </div>
+   </div>
+   <div class="fotos" aria-hidden="true"><img src="img/mujer.svg" alt=""><img src="img/hombre.svg" alt=""></div>
+  </div>
+  <div class="cifras">
+   <div class="cifra"><strong>4</strong><span>líneas: mujer, hombre, infantil y temáticas</span></div>
+   <div class="cifra"><strong>S a XL</strong><span>tallas disponibles</span></div>
+   <div class="cifra"><strong>Mayor y detal</strong><span>ventas para negocios y clientes finales</span></div>
+   <div class="cifra"><strong>Nacional</strong><span>envíos a todo el país</span></div>
+  </div>
+ </div>
+</section>
+
+<section id="nosotros">
+ <div class="contenedor">
+  <div class="nosotros-grid">
+   <div>
+    <span class="eyebrow">Quiénes somos</span>
+    <h2 class="titulo">Una microempresa que viste tus noches</h2>
+   </div>
+   <div class="nosotros">
+    <p><strong>Pijamas Decare</strong> es una microempresa dedicada a la comercialización de pijamas y prendas de vestir, ubicada en el sector de Gratamira, en Bogotá D.C. Desde nuestra sede coordinamos las ventas al por mayor y al detal, y atendemos a nuestros clientes por WhatsApp, redes sociales y en la tienda física.</p>
+    <p>Nuestro equipo está formado por el gerente y dos asesores de ventas: uno atiende a los clientes por WhatsApp y el otro gestiona los pedidos. Nos diferencia el diseño exclusivo de nuestras pijamas y la combinación de moda y tecnología, por eso digitalizamos nuestra tienda con un sistema propio de ventas, inventario y facturación.</p>
+   </div>
+  </div>
+  <div class="tarjetas">
+   <article class="tarjeta"><div class="icono" aria-hidden="true">🎯</div><h3>Misión</h3>
+    <p>Ofrecer pijamas cómodas, de calidad y de diseño exclusivo para toda la familia, con una atención cercana y una experiencia de compra ágil, tanto en nuestra tienda física como en los canales digitales.</p></article>
+   <article class="tarjeta"><div class="icono" aria-hidden="true">🌙</div><h3>Visión</h3>
+    <p>Ser reconocidos como una marca digital líder de pijamas en Colombia, con todos nuestros procesos de venta digitalizados y presencia en todo el país mediante envíos nacionales.</p></article>
+   <article class="tarjeta"><div class="icono" aria-hidden="true">📈</div><h3>Objetivo general</h3>
+    <p>Comercializar pijamas de diseño exclusivo al por mayor y al detal, apoyados en un sistema de información web que integra el catálogo, el inventario, las ventas y la facturación.</p></article>
+   <article class="tarjeta"><div class="icono" aria-hidden="true">✅</div><h3>Objetivos específicos</h3>
+    <ul><li>Mantener el inventario actualizado en tiempo real y evitar la pérdida de información.</li>
+     <li>Facilitar que los clientes encuentren su pijama por categoría, talla y precio.</li>
+     <li>Entregar factura electrónica en PDF en cada compra.</li>
+     <li>Ampliar las ventas en línea con envíos a todo el país.</li></ul></article>
+  </div>
+  <div style="margin-top:40px">
+   <span class="eyebrow">Nuestros valores</span>
+   <div class="valores">
+    <div class="valor">🧵<strong>Calidad</strong><span>Telas suaves y buenos acabados.</span></div>
+    <div class="valor">☁️<strong>Comodidad</strong><span>Prendas pensadas para descansar.</span></div>
+    <div class="valor">✨<strong>Diseño exclusivo</strong><span>Modelos que no encuentras en otro lugar.</span></div>
+    <div class="valor">🤝<strong>Cercanía</strong><span>Atención amable y personalizada.</span></div>
+    <div class="valor">💻<strong>Innovación</strong><span>Procesos digitales y compra ágil.</span></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="servicios" id="servicios">
+ <div class="contenedor centro">
+  <span class="eyebrow">Qué ofrecemos</span>
+  <h2 class="titulo">Pijamas para cada persona y cada ocasión</h2>
+  <p class="sub">Cuatro líneas de producto en tallas S, M, L y XL.</p>
+  <div class="lineas">
+   <a class="linea" href="#catalogo" data-filtro="mujer"><img src="img/mujer.svg" alt="Pijama de mujer"><div><strong>Mujer</strong><span>Satín, algodón, franela y encaje.</span></div></a>
+   <a class="linea" href="#catalogo" data-filtro="hombre"><img src="img/hombre.svg" alt="Pijama de hombre"><div><strong>Hombre</strong><span>Conjuntos clásicos y térmicos.</span></div></a>
+   <a class="linea" href="#catalogo" data-filtro="infantil"><img src="img/infantil.svg" alt="Pijama infantil"><div><strong>Infantil</strong><span>Diseños divertidos para niños.</span></div></a>
+   <a class="linea" href="#catalogo" data-filtro="tematicas"><img src="img/tematicas.svg" alt="Pijama temática"><div><strong>Temáticas</strong><span>Navidad, parejas y fechas especiales.</span></div></a>
+  </div>
+  <div class="extras" style="text-align:left">
+   <div class="extra">📦<div><strong>Ventas al por mayor y al detal</strong><span>Precios especiales para negocios y revendedores.</span></div></div>
+   <div class="extra">🚚<div><strong>Envíos nacionales</strong><span>Recibe tu pedido en cualquier ciudad de Colombia.</span></div></div>
+   <div class="extra">🧾<div><strong>Factura en PDF</strong><span>Cada compra genera su comprobante electrónico.</span></div></div>
+  </div>
+ </div>
+</section>
+
+<section id="catalogo">
+ <div class="contenedor centro">
+  <span class="eyebrow">Catálogo</span>
+  <h2 class="titulo">Escoge tu pijama</h2>
+  <p class="sub">Algunos de nuestros modelos. Filtra por categoría y pídela por WhatsApp.</p>
+  <div class="chips" role="group" aria-label="Filtrar por categoría">
+   <button class="chip" data-cat="todas" aria-pressed="true">Todas</button>
+   <button class="chip" data-cat="mujer" aria-pressed="false">Mujer</button>
+   <button class="chip" data-cat="hombre" aria-pressed="false">Hombre</button>
+   <button class="chip" data-cat="infantil" aria-pressed="false">Infantil</button>
+   <button class="chip" data-cat="tematicas" aria-pressed="false">Temáticas</button>
+  </div>
+  <div class="grid" id="grid" style="text-align:left"></div>
+ </div>
+</section>
+
+<section id="comprar" style="background:#fff">
+ <div class="contenedor">
+  <div class="centro"><span class="eyebrow">Cómo comprar</span><h2 class="titulo">Tu pijama en cuatro pasos</h2></div>
+  <div class="pasos">
+   <div class="paso"><strong>Elige tu pijama</strong><span>Revisa el catálogo por categoría, talla y precio.</span></div>
+   <div class="paso"><strong>Escríbenos</strong><span>Haz tu pedido por WhatsApp o desde tu cuenta en nuestra tienda.</span></div>
+   <div class="paso"><strong>Paga como prefieras</strong><span>Tarjeta de crédito o débito, PSE o efectivo.</span></div>
+   <div class="paso"><strong>Recibe en casa</strong><span>Enviamos a todo Colombia y te entregamos tu factura en PDF.</span></div>
+  </div>
+  <div class="sistema">
+   <div>
+    <h3>Nuestro sistema de información</h3>
+    <p>Pijamas Decare cuenta con un sistema web propio, desarrollado por Dev-Hive, que reemplaza los registros en Excel y cuadernos:</p>
+    <ul><li>Catálogo con filtros conectado a la base de datos.</li><li>Carrito de compras y pago con tarjeta, PSE o efectivo.</li>
+     <li>Inventario, ventas y facturación en tiempo real.</li><li>Paneles para el gerente, los vendedores y los clientes.</li></ul>
+   </div>
+   <div><a class="btn btn-lleno" href="https://dev-hive-react.vercel.app/" target="_blank" rel="noopener">Conoce a Dev-Hive</a></div>
+  </div>
+ </div>
+</section>
+
+<section id="contacto">
+ <div class="contenedor">
+  <div class="centro"><span class="eyebrow">Contáctenos</span><h2 class="titulo">Estamos para ayudarte</h2></div>
+  <div class="contacto-grid">
+   <div>
+    <a class="dato" href="https://wa.link/ea9ey2" target="_blank" rel="noopener"><span style="font-size:1.6rem">💬</span><div><strong>WhatsApp</strong><span>Pedidos y asesoría personalizada</span></div></a>
+    <a class="dato" href="https://www.instagram.com/creacionesdecare/" target="_blank" rel="noopener"><span style="font-size:1.6rem">📸</span><div><strong>Instagram</strong><span>@creacionesdecare: novedades y colecciones</span></div></a>
+    <div class="dato"><span style="font-size:1.6rem">📍</span><div><strong>Ubicación</strong><span>Sector de Gratamira, Bogotá D.C. · Envíos nacionales</span></div></div>
+   </div>
+   <div class="horario">
+    <h3>¿Compras al por mayor?</h3>
+    <p>Si tienes un negocio o quieres revender nuestras pijamas, escríbenos por WhatsApp y te enviamos el catálogo completo con precios por cantidad.</p>
+    <p style="margin-top:16px"><a class="btn btn-lleno" href="https://wa.link/ea9ey2" target="_blank" rel="noopener">Escribir por WhatsApp</a></p>
+   </div>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="contenedor pie">
+  <span><strong>Pijamas Decare</strong> · Transforma tus noches con estilo y comodidad</span>
+  <span>Sitio desarrollado por <a href="https://dev-hive-react.vercel.app/">Dev-Hive</a></span>
+ </div>
+</footer>
+
+<script>
+const PRODUCTOS = [{"n": "Pijama Franela Polar Osito", "d": "Pijama abrigada de invierno con diseño de osito", "p": 45000, "t": "M", "c": "mujer"}, {"n": "Pijama Corta Verano Stripes", "d": "Pijama fresca de dos piezas para verano", "p": 32000, "t": "S", "c": "mujer"}, {"n": "Pijama Elegante Satín Noir", "d": "Pijama sofisticada de satín negro", "p": 65000, "t": "L", "c": "mujer"}, {"n": "Pijama Térmica Antifrío", "d": "Pijama de alta retención térmica", "p": 55000, "t": "XL", "c": "hombre"}, {"n": "Pijama Clásica Algodón Blue", "d": "Pijama tradicional en suave algodón azul", "p": 38000, "t": "M", "c": "hombre"}, {"n": "Pijama Satín Rosa Pastel", "d": "Conjunto de satín delicado color rosa", "p": 60000, "t": "S", "c": "mujer"}, {"n": "Pijama Franela Cuadros Leñador", "d": "Estilo clásico a cuadros de franela", "p": 48000, "t": "L", "c": "hombre"}, {"n": "Pijama Short y Camisola Floral", "d": "Estampado floral con short cómodo", "p": 35000, "t": "M", "c": "mujer"}, {"n": "Pijama Manga Larga Lunar", "d": "Pijama de manga larga con puntos blancos", "p": 42000, "t": "S", "c": "mujer"}, {"n": "Pijama Conjunto 2 Piezas Gray", "d": "Conjunto cómodo color gris", "p": 40000, "t": "L", "c": "hombre"}, {"n": "Pijama Enterizo Unicornio", "d": "Pijama enteriza con capucha temática", "p": 75000, "t": "M", "c": "tematicas"}, {"n": "Pijama Maternal Confort", "d": "Especial para comodidad en etapa maternal", "p": 50000, "t": "L", "c": "mujer"}, {"n": "Pijama Infantil Dinosaurios", "d": "Diseño divertido para niños", "p": 30000, "t": "S", "c": "infantil"}, {"n": "Pijama Dúo Pareja King & Queen", "d": "Pijama combinada para parejas", "p": 95000, "t": "XL", "c": "tematicas"}, {"n": "Pijama Navideña Reno", "d": "Motivo especial de temporada navideña", "p": 52000, "t": "M", "c": "tematicas"}, {"n": "Pijama Estampada Gatos", "d": "Diseño tierno con estampado de gatos", "p": 36000, "t": "S", "c": "infantil"}, {"n": "Pijama Lisa Minimalista", "d": "Diseño liso de corte sencillo", "p": 34000, "t": "M", "c": "hombre"}, {"n": "Pijama Oversize Comfort", "d": "Corte amplio y holgado para máxima comodidad", "p": 46000, "t": "L", "c": "hombre"}, {"n": "Pijama Deluxe Encaje", "d": "Acabados finos con detalles de encaje", "p": 70000, "t": "S", "c": "mujer"}, {"n": "Pijama Básica Algodón Grey", "d": "Básica de uso diario en algodón", "p": 28000, "t": "M", "c": "hombre"}];
+const NOMBRES = {mujer:'Mujer', hombre:'Hombre', infantil:'Infantil', tematicas:'Temáticas y ocasiones'};
+const precio = new Intl.NumberFormat('es-CO', {style:'currency', currency:'COP', maximumFractionDigits:0});
+const grid = document.getElementById('grid');
+function pintar(cat){
+  grid.innerHTML = '';
+  PRODUCTOS.filter(p => cat === 'todas' || p.c === cat).forEach(p => {
+    const el = document.createElement('article');
+    el.className = 'producto';
+    el.innerHTML = `<img src="img/${p.c}.svg" alt="" loading="lazy"><div><span class="cat"></span><h3></h3><p style="color:var(--suave);font-size:.86rem"></p>
+      <div class="fila"><span class="precio"></span><span class="talla"></span></div>
+      <a class="btn btn-borde" target="_blank" rel="noopener" href="https://wa.link/ea9ey2">Pedir por WhatsApp</a></div>`;
+    el.querySelector('.cat').textContent = NOMBRES[p.c];
+    el.querySelector('h3').textContent = p.n;
+    el.querySelector('p').textContent = p.d;
+    el.querySelector('.precio').textContent = precio.format(p.p);
+    el.querySelector('.talla').textContent = 'Talla ' + p.t;
+    grid.appendChild(el);
+  });
+}
+function filtrar(cat){
+  document.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', String(c.dataset.cat === cat)));
+  pintar(cat);
+}
+document.querySelectorAll('.chip').forEach(c => c.addEventListener('click', () => filtrar(c.dataset.cat)));
+document.querySelectorAll('[data-filtro]').forEach(a => a.addEventListener('click', () => filtrar(a.dataset.filtro)));
+const menu = document.querySelector('nav ul'), boton = document.querySelector('.menu-btn');
+boton.addEventListener('click', () => { const ab = menu.classList.toggle('abierto'); boton.setAttribute('aria-expanded', String(ab)); });
+menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.remove('abierto')));
+pintar('todas');
+</script>
+</body>
+</html>

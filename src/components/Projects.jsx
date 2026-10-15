@@ -4,10 +4,10 @@ import DecareLogo from "./DecareLogo";
 
 import "../css/Projects.css";
 
-// Dirección de la tienda de pijamas. Mientras no esté publicada se usa la
-// instalación local de XAMPP; al publicarla basta con definir VITE_TIENDA_URL.
+// Sitio público de Pijamas Decare (public/pijamas-decare). Si se publica la tienda
+// completa en otro servidor, basta con definir VITE_TIENDA_URL.
 const TIENDA_PIJAMAS_URL =
-    import.meta.env.VITE_TIENDA_URL ?? "http://localhost/Axioma-commerce-stock-master/";
+    import.meta.env.VITE_TIENDA_URL ?? "/pijamas-decare/";
 
 function Projects() {
 
