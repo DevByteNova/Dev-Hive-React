@@ -311,3 +311,7 @@ section h2 {
     position: relative;
     z-index: 1;
 }
+/* Las secciones quedan visibles bajo la barra fija al navegar desde el menú */
+main > section {
+    scroll-margin-top: 80px;
+}

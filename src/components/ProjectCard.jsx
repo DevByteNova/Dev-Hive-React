@@ -1,8 +1,17 @@
 import "../css/ProjectCard.css";
 
 function ProjectCard({ title, description, category, logo, url }) {
+    // Si el proyecto tiene enlace, toda la tarjeta es el enlace (más fácil de pulsar en celular).
+    const Contenedor = url ? "a" : "article";
+    const propsEnlace = url
+        ? { href: url, "aria-label": `Ver el proyecto ${title}` }
+        : {};
+
     return (
-        <article className="project-card">
+        <Contenedor
+            className={url ? "project-card project-card--link" : "project-card"}
+            {...propsEnlace}
+        >
 
             <div className="project-thumbnail">
                 {logo ? (
@@ -21,18 +30,7 @@ function ProjectCard({ title, description, category, logo, url }) {
                 </p>
 
                 <h3>
-                    {url ? (
-                        <a
-                            className="project-card-link"
-                            href={url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            {title}
-                        </a>
-                    ) : (
-                        title
-                    )}
+                    {title}
                 </h3>
 
                 <p className="project-description">
@@ -40,12 +38,12 @@ function ProjectCard({ title, description, category, logo, url }) {
                 </p>
 
                 <span className="project-arrow" aria-hidden="true">
-                    →
+                    {url ? "Ver proyecto →" : "→"}
                 </span>
 
             </div>
 
-        </article>
+        </Contenedor>
     );
 }
 

@@ -202,35 +202,28 @@
         transform 0.3s ease;
 }
 
-/* Enlace: cubre toda la tarjeta para que cualquier clic abra el proyecto */
+/* Tarjeta con enlace: toda la tarjeta es clicable */
 
-.project-card-link {
+.project-card--link {
+    display: block;
+
     color: inherit;
 
     text-decoration: none;
+
+    cursor: pointer;
 }
 
-.project-card-link::after {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    z-index: 2;
-}
-
-.project-card-link:focus-visible {
-    outline: none;
-}
-
-.project-card:has(.project-card-link:focus-visible) {
+.project-card--link:focus-visible {
     outline: 2px solid var(--color-azul-claro);
 
     outline-offset: 4px;
 }
 
-.project-card:has(.project-card-link) {
-    cursor: pointer;
+.project-card--link .project-arrow {
+    font-size: 1rem;
+
+    font-weight: 600;
 }
 
 /* Descripción */
