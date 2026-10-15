@@ -51,7 +51,6 @@ function App() {
             />
 
             <main>
-<<<<<<< HEAD
                 {activeSection === "home" && <Hero onSelectSection={handleSectionChange} />}
                 {activeSection === "services" && <Services />}
                 {activeSection === "technologies" && <Technologies />}
@@ -63,14 +62,6 @@ function App() {
                 )}
                 {activeSection === "projects" && <Projects />}
                 {activeSection === "contact" && <Contact />}
-=======
-                <Hero onSelectSection={handleSectionChange} />
-                <Services />
-                <Technologies />
-                <About />
-                <Projects />
-                <Contact />
->>>>>>> 6e86b528994d9224ea385af6f039ea9244505db9
             </main>
 
             <Footer onSelectSection={handleSectionChange} />
